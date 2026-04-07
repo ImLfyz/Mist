@@ -108,7 +108,7 @@ You can start with 2 ways:
 
 - Compile by yourself
 
-  - <details>
+<details>
 
   - Clone Mist repo:
 
@@ -130,7 +130,7 @@ You can start with 2 ways:
 </details>
 
 - Use already compiled Mist.img from repo
-  - <details>
+<details>
 
   - Copy Mist.img:
   ```
