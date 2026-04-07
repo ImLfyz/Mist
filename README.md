@@ -11,30 +11,35 @@ Mist currently has a few essential components:
   - GDT setup
   - A20 setup
   - Kernel loading to memory
+
 - Kernel
   - PMM
   - Own standard C library
   - VGA driver
-Todo:
-- [] VMM
-- [] IDT
-- [] Keyboard driver
-- [] Shell
-- [] Some utils
-- [] etc.
+
+- Todo:
+  - [ ] VMM
+  - [ ] IDT
+  - [ ] Keyboard driver
+  - [ ] Shell
+  - [ ] Some utils
+  - [ ] etc.
 
 ### Explanation...
 #### 🥇 Bootloader
-1. Paging:
+- **Paging**:
   - Address of PML4: 0x1000
   - Address of PDPT: 0x2000
   - Address of PD: 0x3000
   - __No__ PT: There are 2MB pages
-2. GDT:
+
+- **GDT**:
   - GDT settings you can see at the end of boot/BootLoader.asm
-3. A20:
+
+- **A20**:
   - Same as GDT
-4. Kernel load:
+
+- **Kernel load**:
   - Firstly kernel is loaded to the 0x10000 with BIOS interrupts
   - Then it moves to 0x100000 using a loop
   - It calls with:
@@ -50,14 +55,15 @@ Also it have some functions you can use in your kernel-level programs (And it wi
 |:----------------------:|:----------------------------------------------:|
 |`alloc()`               |Gives addresses of free page with lowest address|
 |`pmm_free(addr of page)`|Clear status of given page                      |
+
 2. Standard C library:
 Import:
 ```C
 #include <mist.h>
 ```
 Table of functions that it have:
-|Name             |What it does                                                                  |
-|:---------------:|:----------------------------------------------------------------------------:|
+|Name               |What it does                                                                  |
+|:-----------------:|:-----------------------------------------------------------------------------|
 |`copy(ab, cd, n)`  |Clone n bytes from cd to ab                                                   |
 |`copyfb(ab, cd, n)`|Same as clone() but from the back                                             |
 |`fill(ab, c, n)`   |Fill ab with c n times                                                        |
@@ -65,10 +71,11 @@ Table of functions that it have:
 |`clear()`          |Clears the screen and moves cursor to left up of screen                       |
 |`putchar(a)`       |Insert a to the cursor place and move cursor right (Down if screen width ends)|
 |`print(str)`       |Just print... You know                                                        |
+
 3. VGA driver
 It have couple of functions that using by any functions in standard library
-|Name                |What it does                                    |
-|:------------------:|:----------------------------------------------:|
+|Name                  |What it does                                    |
+|:--------------------:|:----------------------------------------------:|
 |`vga_clear()`         |Clears the screen without moving cursor         |
 |`vga_putchar(x, y, c)`|Puts c to place that have (x, y) coordinates    |
 |`vga_getchar(x, y)`   |Returns character that was on (x, y) coordinates|
@@ -79,8 +86,8 @@ It have couple of functions that using by any functions in standard library
 Also you should have GCC to compile Mist
 > **Recomendation** ~~(Again...)~~: Use Linux to this
 You can start with 2 ways:
+
 1. Compile by yourself
-<details>
   1. Clone Mist repo:
   ```
   git clone https://github.com/L-fyz/Mist
@@ -94,9 +101,8 @@ You can start with 2 ways:
   ```
   make run
   ```
-</details>
+
 2. Use already compiled Mist.img from repo
-<details>
   1. Copy Mist.img:
   ```
   wget https://raw.githubusercontent.com/L-fyz/Mist/main/Mist.img ~/Mist
@@ -105,7 +111,6 @@ You can start with 2 ways:
   ```
   qemu-system-x86_64 -drive format=raw,file=Mist.img -no-reboot
   ```
-</details>
 
 ## 😰 Issues
 ***Mist - young project made by schoolboy***
