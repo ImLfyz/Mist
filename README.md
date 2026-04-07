@@ -24,7 +24,6 @@ Todo:
 - [] etc.
 
 ### Explanation...
-<details>
 #### 🥇 Bootloader
 1. Paging:
   - Address of PML4: 0x1000
@@ -47,10 +46,10 @@ Todo:
 1. PMM:
 A tool that has a bitmap of all pages and tracks their statuses (1 - already allocated; 0 - free)
 Also it have some functions you can use in your kernel-level programs (And it will be used by many of tools that I will make later)
-|Function              |What it does                                    |
-|:--------------------:|:----------------------------------------------:|
-|alloc()               |Gives addresses of free page with lowest address|
-|pmm_free(addr of page)|Clear status of given page                      |
+|Function                |What it does                                    |
+|:----------------------:|:----------------------------------------------:|
+|`alloc()`               |Gives addresses of free page with lowest address|
+|`pmm_free(addr of page)`|Clear status of given page                      |
 2. Standard C library:
 Import:
 ```C
@@ -59,22 +58,21 @@ Import:
 Table of functions that it have:
 |Name             |What it does                                                                  |
 |:---------------:|:----------------------------------------------------------------------------:|
-|copy(ab, cd, n)  |Clone n bytes from cd to ab                                                   |
-|copyfb(ab, cd, n)|Same as clone() but from the back                                             |
-|fill(ab, c, n)   |Fill ab with c n times                                                        |
-|iseq(ab, cd, n)  |Check the equality of ab and cd (True - ab==cd; False - ab!=cd)               |
-|clear()          |Clears the screen and moves cursor to left up of screen                       |
-|putchar(a)       |Insert a to the cursor place and move cursor right (Down if screen width ends)|
-|print(str)       |Just print... You know                                                        |
+|`copy(ab, cd, n)`  |Clone n bytes from cd to ab                                                   |
+|`copyfb(ab, cd, n)`|Same as clone() but from the back                                             |
+|`fill(ab, c, n)`   |Fill ab with c n times                                                        |
+|`iseq(ab, cd, n)`  |Check the equality of ab and cd (True - ab==cd; False - ab!=cd)               |
+|`clear()`          |Clears the screen and moves cursor to left up of screen                       |
+|`putchar(a)`       |Insert a to the cursor place and move cursor right (Down if screen width ends)|
+|`print(str)`       |Just print... You know                                                        |
 3. VGA driver
 It have couple of functions that using by any functions in standard library
 |Name                |What it does                                    |
 |:------------------:|:----------------------------------------------:|
-|vga_clear()         |Clears the screen without moving cursor         |
-|vga_putchar(x, y, c)|Puts c to place that have (x, y) coordinates    |
-|vga_getchar(x, y)   |Returns character that was on (x, y) coordinates|
+|`vga_clear()`         |Clears the screen without moving cursor         |
+|`vga_putchar(x, y, c)`|Puts c to place that have (x, y) coordinates    |
+|`vga_getchar(x, y)`   |Returns character that was on (x, y) coordinates|
 **I recommend you use tools from standard library to work with screen instead of using VGA driver functions**
-</details>
 
 ##  🏁 Get started
 ***I DON'T recommend to try Mist on real PC. Instead of this use QEMU***
