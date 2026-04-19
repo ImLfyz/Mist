@@ -7,3 +7,4 @@
 #include "debug.h"
 #include "PMM.h"
 #include "VMM.h"
+#include "IDT.h"

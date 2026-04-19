@@ -32,5 +32,7 @@ void __attribute__((section(".text.start"), noreturn)) main(void) {
     } else {
         print("\n[ + ]: VMM initialization");
     }
+
+    idt_init();
     for (;;) __asm__ volatile("hlt");
 }
