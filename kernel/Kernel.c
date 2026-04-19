@@ -1,16 +1,36 @@
-#include <mist.h>
+#include "mist.h"
 
 void __attribute__((section(".text.start"), noreturn)) main(void) {
-    pmm_init();
     clear();
-    print("Welcome to Mist!");
-    print("\nMist - tiny x86_64 operating system");
-    print("\nNow it have:");
-    print("\n  1. Paging");
-    print("\n  2. GDT");
-    print("\n  3. Screen work tools");
-    print("\n  4. Memory work tools");
-    print("\n  5. VGA driver");
-    print("\n  6. PMM");
-    for(;;) __asm__ volatile("hlt");
+    print("                         @#");
+    print("\n              %(        }##");
+    print("\n             ##>       <#:#");
+    print("\n            #01#      ## ##");
+    print("\n           &# ##     ##  <>");
+    print("\n          #?  ##    ##    /n");
+    print("\n         >#    ##  ##      [#");
+    print("\n        #@     (# #)        #^");
+    print("\n      ?*        -_-          #*#");
+    print("\n    #&                        $##%");
+    print("\n  <#                            #0#1");
+    print("\n#@                                #+#=]");
+    print("\n                                    {#!#}");
+    print("\n                                      ?#@;#{");
+    print("\n -- Welcome to Mist!");
+    print("\n\nStarting...");
+
+    if (!pmm_init()) {
+        print("\n[ - ]: PMM initialization");
+        for (;;) __asm__ volatile("hlt");
+    } else {
+        print("\n[ + ]: PMM initialization");
+    }
+
+    if (!vmm_init()) {
+        print("\n[ - ]: VMM initialization");
+        for (;;) __asm__ volatile("hlt");
+    } else {
+        print("\n[ + ]: VMM initialization");
+    }
+    for (;;) __asm__ volatile("hlt");
 }

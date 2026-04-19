@@ -6,3 +6,4 @@
 #include "alloc.h"
 #include "debug.h"
 #include <./../PMM.h>
+#include <./../VMM.h>
