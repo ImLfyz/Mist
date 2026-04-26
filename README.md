@@ -7,11 +7,11 @@ It uses MIT license so you can do anything with this code!
 
 ## 🤔 What it can?
 A lot of things. You can see explanation of:
-- [Minit](https://github.com/ImLfyz/Mist/tree/main/msc/Minit)
-- [Drivers](https://github.com/ImLfyz/Mist/tree/main/msc/drivers)
-- [Kernel](https://github.com/ImLfyz/Mist/tree/main/msc/kernel)
-- [Mistd](https://github.com/ImLfyz/Mist/tree/main/msc/mistd)
-- [Utils](https://github.com/ImLfyz/Mist/tree/main/msc/utils)
+- [Minit](https://github.com/ImLfyz/Mist/tree/main/msc/Minit/Minit.md)
+- [Drivers](https://github.com/ImLfyz/Mist/tree/main/msc/drivers/drivers.md)
+- [Kernel](https://github.com/ImLfyz/Mist/tree/main/msc/kernel/kernel.md)
+- [Mistd](https://github.com/ImLfyz/Mist/tree/main/msc/mistd/mistd.md)
+- [Utils](https://github.com/ImLfyz/Mist/tree/main/msc/utils/utils.md)
 
 ##  🏁 Get started
 ***I DON'T recommend to try Mist on real PC. Instead of this use QEMU***
