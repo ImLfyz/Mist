@@ -10,3 +10,4 @@
 #include "VGA.h"
 #include "IDT.h"
 #include "PIC.h"
+#include "keyboard.h"

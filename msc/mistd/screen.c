@@ -4,10 +4,19 @@
 static u16 cursor_x = 0;
 static u16 cursor_y = 0;
 
+void cursor_upd(int cursor_x, int cursor_y) {
+    u16 pos = cursor_y * 80 + cursor_x;
+    outb(0x3D4, 14);
+    outb(0x3D5, (u8)(pos >> 8));
+    outb(0x3D4, 15);
+    outb(0x3D5, (u8)(pos & 0xFF));
+}
+
 void clear(void) {
     vga_clear();
     cursor_x = 0;
     cursor_y = 0;
+    cursor_upd(0, 0);
 }
 
 void putchar(char c) {
@@ -26,6 +35,7 @@ void putchar(char c) {
         vga_scrollup();
         cursor_y = 24;
     }
+    cursor_upd(cursor_x, cursor_y);
 }
 
 void print_str(const char* c) {
