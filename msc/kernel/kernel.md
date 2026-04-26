@@ -1,5 +1,5 @@
 # Kernel
-I don't know waht to say here. This is Mist's kernel
+I don't know what to say here. This is Mist's kernel
 
 ## Tools
 Now here is:
@@ -33,5 +33,5 @@ They are in IDT.c:
 |:-------------------------------------------------------:|:------------------------------------|
 |`idt_init(void)`                                         |Initializes IDT                      |
 |`isr_handler(u8 vector, u64 error_code)`                 |Handles interrupts with given vector |
-|`idt_set_gate(u8 vector, void* handler, u8 type, u8 dpl)`|Setup hendler with standard type     |
-|Entire `isr_stub.asm`                                    |Just makes stub for every isr        |
+|`idt_set_gate(u8 vector, void* handler, u8 type, u8 dpl)`|Sets up a handler with standard type |
+|Entire `isr_stub.asm`                                    |Provides assembly stubs for every ISR|

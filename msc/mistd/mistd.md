@@ -1,8 +1,8 @@
 # Mistd
-This is small bare-metal standard library for C. Now it have many features that I will explain now
+This is a small bare-metal standard library for C. Now it have many features that I'll explain below
 
 ## Tools
-Now mistd have tools to work with:
+Now mistd has tools to work with:
 - Screen
 - Memory
 - Strings
@@ -13,7 +13,7 @@ They are in screen.c file:
 |Name                                         |What it does                                                                  |
 |:-------------------------------------------:|:-----------------------------------------------------------------------------|
 |`clear()`                                    |Clears the screen and moves cursor to left up of screen                       |
-|`putchar(char c)`                            |Insert c to the cursor place and move cursor right (Down if screen width ends)|
+|`putchar(char c)`                            |Inserts c at the cursor position and move cursor right (Down if screen width ends)|
 |`print_str(const char* str)`                 |Just print... You know                                                        |
 |`print_num(u64 i, base)`                     |Printing a number with `base` notation                                        |
 |`void delchar(void)`                         |Delete last char from screen and moves cursor back                            |
@@ -24,10 +24,10 @@ They are in memory.c file:
 
 |Name                                         |What it does                                                                  |
 |:-------------------------------------------:|:-----------------------------------------------------------------------------|
-|`copy(void* dst, void* src, usize n)`        |Clone n bytes from cd to ab                                                   |
+|`copy(void* dst, void* src, usize n)`        |Clone n bytes from src to dst                                                   |
 |`copyfb(void* dst, void src, usize n)`       |Same as copy(), but from the back                                             |
-|`fill(void* dst, void* src, usize n)`        |Fill ab with c n times                                                        |
-|`iseq(const void* a, const void* b, usize n)`|Check the equality of ab and cd (True - ab==cd; False - ab!=cd)               |
+|`fill(void* dst, void* src, usize n)`        |Fill ab with c, n times                                                        |
+|`iseq(const void* a, const void* b, usize n)`|Check the equality of a and b (True - a==b; False - a!=b)               |
 
 ### String tools
 They are in string.c:

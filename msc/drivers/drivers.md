@@ -1,8 +1,8 @@
 # Drivers
-Here is drivers for x86_64 processor specific
+Here are x86_64-specific drivers
 
 ## Tools
-Now there is drivers for:
+Currently, drivers are available for:
 - VGA
 - PIC
 - Keyboard
@@ -16,7 +16,7 @@ They are in VGA.c:
 |`vga_putchar(x, y, c)`|Puts c to place that have (x, y) coordinates    |
 |`vga_getchar(x, y)`   |Returns character that was on (x, y) coordinates|
 
-> But for work with screen i recommend use tools from mistd
+> But for working with the screen, I recommend using tools from mistd
 
 ### PIC
 They are in PIC.c:
@@ -31,6 +31,6 @@ They are in keyboard.c:
 
 |Name                                          |What it does                                                        |
 |:--------------------------------------------:|:-------------------------------------------------------------------|
-|`kbd_init(void)`                              |Initializes keyboard ind needed to it things                        |
+|`kbd_init(void)`                              |Initializes the keyboard and performs required setup                |
 |`kbd_handle_irq(u64 error_code)`              |Get scancode from PIC, convert it to letter and put it into a buffer|
 |`kbd_getchar(void)`                           |Get and return letter from buffer                                   |

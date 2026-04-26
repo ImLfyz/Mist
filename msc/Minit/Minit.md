@@ -2,11 +2,11 @@
 Mist's bootloader
 
 ## What it does?
-It doing:
+It does:
 - Transition from real mode to long mode
 - Base paging (Huge pages, NO PT)
 - Base GDT
 - Kernel loading
 
-## Warninig
-In future it will be separated project, but now it will be here before I end Mist
+## Warning
+In the future, this will be a separate project but it will be here until Mist is complete

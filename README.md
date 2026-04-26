@@ -5,7 +5,7 @@
 ***Mist* is a simple x86_64 operating system made for learning how the PC works**
 It uses MIT license so you can do anything with this code!
 
-## 🤔 What it can?
+## 🤔 What can it do?
 A lot of things. You can see explanation of:
 - [Minit](https://github.com/ImLfyz/Mist/tree/main/msc/Minit/Minit.md)
 - [Drivers](https://github.com/ImLfyz/Mist/tree/main/msc/drivers/drivers.md)
@@ -14,10 +14,11 @@ A lot of things. You can see explanation of:
 - [Utils](https://github.com/ImLfyz/Mist/tree/main/msc/utils/utils.md)
 
 ##  🏁 Get started
-***I DON'T recommend to try Mist on real PC. Instead of this use QEMU***
+***I DON'T recommend to try Mist on real PC. Use QEMU instead***
 
 Also you should have GCC to compile Mist
 > **Recommendation**: Use Linux to this
+
 You can start with 2 ways:
 
 Compile by yourself:
@@ -28,7 +29,7 @@ Compile by yourself:
   ```
   git clone https://github.com/L-fyz/Mist
   ```
-  - Compile (GCC):
+  - Compile (Clang):
 
   ```
   cd ~/Mist
